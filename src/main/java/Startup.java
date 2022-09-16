@@ -1,5 +1,9 @@
 public class Startup {
     public static void main(String[] args) {
-        ConsoleManager.getInstance().run();
+        try {
+            ConsoleManager.getInstance().run();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
     }
 }

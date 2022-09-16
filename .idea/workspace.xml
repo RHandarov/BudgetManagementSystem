@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e931df8e-05dd-4fa6-84ab-9ec0791a52f4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ConsoleManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Startup.java" afterDir="false" />
+    <list default="true" id="e931df8e-05dd-4fa6-84ab-9ec0791a52f4" name="Changes" comment="Added authorization feature">
+      <change afterPath="$PROJECT_DIR$/src/main/java/FileManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PasswordManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/FilePermissionException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ConsoleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConsoleManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Startup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Startup.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +65,14 @@
       <option name="presentableId" value="Default" />
       <updated>1663312562231</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1663313413284</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1663313413284</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -78,5 +85,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="Added authorization feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added authorization feature" />
   </component>
 </project>
