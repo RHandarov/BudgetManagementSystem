@@ -3,6 +3,7 @@ package log;
 import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Log {
@@ -27,7 +28,8 @@ public class Log {
     }
 
     private void setDate(String date) throws ParseException {
-        this.date = DateFormat.getDateInstance().parse(date);
+        DateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+        this.date = format.parse(date);
     }
 
     private void setType(char type) {
@@ -35,9 +37,9 @@ public class Log {
             this.type = LogType.PROFIT;
         } else if (type == 'E') {
             this.type = LogType.EXPENSE;
+        } else {
+            throw new IllegalArgumentException("Provide valid record type (P or E)!");
         }
-
-        throw new IllegalArgumentException("Provide valid record type (P or E)!");
     }
 
     private void setMoneyAmount(double amount) {

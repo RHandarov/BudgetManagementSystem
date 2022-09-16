@@ -1,6 +1,8 @@
 import exceptions.FilePermissionException;
+import log.Log;
 
 import java.io.FileNotFoundException;
+import java.text.ParseException;
 import java.util.Scanner;
 
 public class ConsoleManager {
@@ -75,7 +77,13 @@ public class ConsoleManager {
                 System.out.print("Enter entity's amount of money: ");
                 double moneyAmount = this.scanner.nextDouble();
 
-                //
+                try {
+                    Log entity = new Log(name, date, type, moneyAmount);
+                } catch (Exception exception) {
+                    System.out.print("ERROR: ");
+                    System.out.print(exception.getMessage());
+                    System.out.println(" Please try again!");
+                }
             } else if (operationType == 2) {
                 this.printGoodbyeGreeting();
                 break;
