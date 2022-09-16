@@ -36,7 +36,52 @@ public class ConsoleManager {
         }
     }
 
+    private void printOperationsInfo() {
+        System.out.println("1. Add new entity");
+        System.out.println("2. Exit");
+    }
+
+    private int getOperationType() {
+        System.out.print("Please enter operation number from list below: ");
+        return scanner.nextInt();
+    }
+
+    private void printGoodbyeGreeting() {
+        System.out.println("Thank you for using our app!");
+    }
+
+    private void printInvalidOperationTypeMessage(int operationType) {
+        System.out.println("ERROR: Operation with number " + operationType + " does not exists! Please try again!");
+    }
+
     public void run() throws FileNotFoundException, FilePermissionException {
         this.authorize();
+
+        while (true) {
+            this.printOperationsInfo();
+            int operationType = this.getOperationType();
+
+            if (operationType == 1) {
+                this.scanner.nextLine();
+                System.out.print("Enter name of the entity: ");
+                String name = this.scanner.nextLine();
+
+                System.out.print("Enter entity's date (dd-mm-yyyy): ");
+                String date = this.scanner.next();
+
+                System.out.print("Enter entity's type (P or E): ");
+                char type = this.scanner.next().charAt(0);
+
+                System.out.print("Enter entity's amount of money: ");
+                double moneyAmount = this.scanner.nextDouble();
+
+                //
+            } else if (operationType == 2) {
+                this.printGoodbyeGreeting();
+                break;
+            } else {
+                this.printInvalidOperationTypeMessage(operationType);
+            }
+        }
     }
 }
