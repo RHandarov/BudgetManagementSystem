@@ -65,4 +65,13 @@ public class Log {
     public BigDecimal getMoneyAmount() {
         return moneyAmount;
     }
+
+    public String getDateAsString() {
+        DateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        return formatter.format(this.date);
+    }
+
+    public String getDay() {
+        return this.getDateAsString().split("-")[0];
+    }
 }

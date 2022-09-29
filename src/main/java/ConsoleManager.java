@@ -56,6 +56,12 @@ public class ConsoleManager {
         System.out.println("ERROR: Operation with number " + operationType + " does not exists! Please try again!");
     }
 
+    private void printException(Exception exception) {
+        System.out.print("ERROR: ");
+        System.out.print(exception.getMessage());
+        System.out.println(" Please try again!");
+    }
+
     public void run() throws FileNotFoundException, FilePermissionException {
         this.authorize();
 
@@ -78,11 +84,15 @@ public class ConsoleManager {
                 double moneyAmount = this.scanner.nextDouble();
 
                 try {
-                    Log entity = new Log(name, date, type, moneyAmount);
+                    try {
+                        Log entity = new Log(name, date, type, moneyAmount);
+                        FileManager.getInstance().saveLog(entity);
+                        System.out.println("The entity has been successfully saved!");
+                    } catch (Exception exception) {
+                        this.printException(exception);
+                    }
                 } catch (Exception exception) {
-                    System.out.print("ERROR: ");
-                    System.out.print(exception.getMessage());
-                    System.out.println(" Please try again!");
+                    this.printException(exception);
                 }
             } else if (operationType == 2) {
                 this.printGoodbyeGreeting();
